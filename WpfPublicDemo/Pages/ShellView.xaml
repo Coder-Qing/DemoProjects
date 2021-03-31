@@ -1,0 +1,43 @@
+﻿<Window x:Class="WpfPublicDemo.Pages.ShellView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPublicDemo.Pages"
+        mc:Ignorable="d"
+        Title="Stylet Start Project" Height="450" Width="800"
+        xmlns:s="https://github.com/canton7/Stylet"
+        d:DataContext="{d:DesignInstance local:ShellViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Image Source="Images\Image3.jpg" />
+            <Image Source="Images\Image1.jpg" x:Name="ImageSecond"/>
+            <Image Source="Images\Image2.jpg" x:Name="ImageTop"/>
+        </Grid>
+        <Button Grid.Row="1" Height="50" Content="点我一下吧~" Margin="10" Width="200" Background="LightBlue" Name="ClickMe" Click="ClickMe_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="LightBlue" CornerRadius="15">
+                        <Grid>
+                            <TextBlock 
+                                Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=Content}" 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"
+                                FontSize="15" Foreground="Black"
+                                FontFamily="宋体"/>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

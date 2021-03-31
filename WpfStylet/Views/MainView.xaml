@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfStylet.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfStylet.Views"
+        xmlns:vm="clr-namespace:WpfStylet.ViewModels"
+        xmlns:s="https://github.com/canton7/Stylet"
+        mc:Ignorable="d"
+        Title="MainView" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance vm:MainViewModel}">
+    <Grid>
+        <TextBlock Text="Hello World!"/>
+        <!--<ContentControl s:View.Model="{Binding ActiveItem}"></ContentControl>-->
+        <ContentControl s:View.Model="{Binding SecondWindowViewModel}"></ContentControl>
+        <StackPanel VerticalAlignment="Center">
+            <Button Content="Click Me" Width="150" Height="50" Command="{s:Action DoSomething}" Margin="5"/>
+            <!--s:View.ActionTarget="{Binding SecondWindowViewModel}" 这个是更ViewModel其中子类里面的方法-->
+            <Button Content="Click Me Second" Width="150" Height="50" Command="{s:Action DoSomething}" CommandParameter="Future" s:View.ActionTarget="{Binding SecondWindowViewModel}"/>
+            <!--您还可以使用其Target属性覆盖操作的目标。然而，由于WPF的限制，你不能绑定到这一点，你必须使用StaticResource，x:Static，x:Type，等。-->
+            <!--<Button Command="{s:Action DoSomething, Target={x:Static my:Globals.ButtonTarget}}">Click me</Button>-->
+            <!--静态方法   如果目标是Type对象，则动作也可以调用静态方法（{x:Type ...}为此在XAML中使用）。您可以同时使用View.ActionTarget和Action的Target属性进行设置。-->
+            <!--public static class CommonButtonTarget
+            {
+                public static void DoSomething() { }
+            }-->
+            <!--<Button Command="{s:Action DoSomething, Target={x:Type my:CommonButtonTarget}}">Click me</Button>-->
+        </StackPanel>
+       
+       
+    </Grid>
+</Window>
