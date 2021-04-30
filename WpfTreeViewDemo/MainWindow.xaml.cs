@@ -29,8 +29,41 @@ namespace WpfTreeViewDemo
 
         public MainWindow()
         {
-          
         }
+
+        private void CountDownBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CountDownMethod(10)(
+                currentTime => 
+                {
+                    App.Current.Dispatcher.Invoke(() => 
+                    {
+                        CountDownBtn.Content =  currentTime;
+                    });
+                }, 
+                () =>
+                {
+                    App.Current.Dispatcher.Invoke(() => 
+                    {
+                    CountDownBtn.Content = "我结束了";
+                    });
+                });
+            
+        }
+        public static Func<Action<int>, Action, Task> CountDownMethod(int second)
+          => (ShowCurrentTime, CloseCountDownTimer) =>
+          {
+              return Task.Run(async () =>
+              {
+                  while (second >= 0)
+                  {
+                      ShowCurrentTime(second);
+                      second--;
+                      await Task.Delay(new TimeSpan(0,0,1));
+                  }
+                  CloseCountDownTimer();
+              });
+          };
     }
 
 }
