@@ -75,5 +75,14 @@
             Height="150"
             Click="CountDownBtn_Click"
             Content="点我开始倒计时" />
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ListBox IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding MyList}" />
+            <TextBlock Grid.Column="1" Text="{Binding MyList/}" />
+        </Grid>
     </Grid>
 </Window>

@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfTreeViewDemo.ViewModel;
 
 namespace WpfTreeViewDemo
 {
@@ -29,6 +30,7 @@ namespace WpfTreeViewDemo
 
         public MainWindow()
         {
+            this.DataContext = new MainViewModel();
         }
 
         private void CountDownBtn_Click(object sender, RoutedEventArgs e)
