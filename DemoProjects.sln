@@ -29,9 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console_20210406", "Console
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{B3DD2858-EED5-4295-BE89-70DD33698C56}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4", "4", "{8B064682-D6AF-41F9-BF7E-D8D122A649EB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DynamicTestDictionary", "DynamicTestDictionary", "{8B064682-D6AF-41F9-BF7E-D8D122A649EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTest", "DynamicTest\DynamicTest.csproj", "{C68A4C94-673A-4FF8-BB15-E3349FDD6D0C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicTest - ExpandoObject", "DynamicTestDictionay\DynamicTest - ExpandoObject\DynamicTest - ExpandoObject.csproj", "{C68A4C94-673A-4FF8-BB15-E3349FDD6D0C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
