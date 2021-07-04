@@ -20,6 +20,7 @@ namespace Console_20210406
         delegate void Print(string message);
 
 
+
         static void Main(string[] args)
         {
             Solution solution = new Solution();
@@ -38,6 +39,8 @@ namespace Console_20210406
             //ConcurrentBag线程安全的对象集合
             //ConcurrentDictionary线程安全的Dictionary
             //BlockingCollection
+
+
             People people = new People()
             {
                 Id = 11,
@@ -48,11 +51,10 @@ namespace Console_20210406
             PeopleCopy peopleCopy = Trans<People, PeopleCopy>(people);
 
 
-            var PeopleCopyObject =  ExpressionMapper.Trans<People, PeopleCopy>(people);
+            var PeopleCopyObject = ExpressionMapper.Trans<People, PeopleCopy>(people);
 
             var PeopleCopyObject2 = ExpressionGenericMapper<People, PeopleCopy>.Trans(people);
 
-           
 
             //CountDownMethod(60)(currentTime => { Console.WriteLine(currentTime); }, () => { Console.WriteLine("我结束了"); });
             Console.ReadLine();
