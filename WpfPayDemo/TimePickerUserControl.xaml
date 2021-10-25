@@ -17,20 +17,23 @@
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <local:CustomButton
+        <!--<local:CustomButton
             x:Name="MyCustomButton"
             Width="150"
             Height="50"
             Content="{Binding RelativeSource={RelativeSource Mode=Self}, Path=MyProperty}"
-            MyProperty="123" />
+            MyProperty="123" />-->
         <Button
             Width="150"
             Height="50"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
             Click="Button_Click" />
+
+        <TabControl Style="{DynamicResource TabControlStyle1}" />
     </Grid>
 </UserControl>
